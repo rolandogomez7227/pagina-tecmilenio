@@ -11,7 +11,7 @@ phases:
   post_build:
     commands:
       - echo "Copiando archivos al bucket S3..."
-      - aws s3 sync pagina/ s3://pagina-tecmilenio-rolandogomez --delete
+      - aws s3 sync pagina/ s3://pagina-tecmilenio-rolando --delete
 
 artifacts:
   files:
