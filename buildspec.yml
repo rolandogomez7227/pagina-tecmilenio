@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Sin dependencias que instalar"
+  build:
+    commands:
+      - echo "Validando archivos..."
+      - ls pagina/
+  post_build:
+    commands:
+      - echo "Copiando archivos al bucket S3..."
+      - aws s3 sync pagina/ s3://NOMBRE-DE-TU-BUCKET --delete
+
+artifacts:
+  files:
+    - pagina/**/*
+  discard-paths: no
